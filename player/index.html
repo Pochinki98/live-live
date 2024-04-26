@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
@@ -8,14 +9,41 @@
 <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.7.2/libs/flv.min.1.6.3.js"></script>
 <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.7.2/libs/dash.all.min.4.5.2.js"></script>
 <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.7.2/tcplayer.v4.7.2.min.js"></script>
+<style>
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-content {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+</style>
 </head>
 <body bgcolor="black" style="margin:0">
-<video id="player-container-id" style="width:100%;height:100%" preload="auto" playsinline webkit-playsinline></video>
+<div id="overlay">
+    <div id="overlay-content">
+        <p>不要相信视频中的广告</p>
+        <button id="confirm-btn">确认</button>
+    </div>
+</div>
+</body>
 <script>
 playurl = location.href.split('?vurl=')[1];
 var player = TCPlayer('player-container-id', {});
 player.src(playurl);
 player.autoplay(1);
+
+document.getElementById('confirm-btn').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+});
 </script>
-</body>
 </html>
