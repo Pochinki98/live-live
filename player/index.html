@@ -16,7 +16,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
-    display: flex;
+    display: flex; /* 初始状态显示 */
     justify-content: center;
     align-items: center;
 }
@@ -35,15 +35,15 @@
         <button id="confirm-btn">确认</button>
     </div>
 </div>
-</body>
 <script>
 playurl = location.href.split('?vurl=')[1];
 var player = TCPlayer('player-container-id', {});
-player.src(playurl);
-player.autoplay(1);
 
 document.getElementById('confirm-btn').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none'; 
+    player.src(playurl); 
+    player.autoplay(1); 
 });
 </script>
+</body>
 </html>
