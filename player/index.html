@@ -29,26 +29,6 @@
         setInterval(updateClock, 1000); // 每秒更新时间
         window.onload = updateClock; // 加载时更新时间
     </script>
-<div id="blinkingText" style="display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 24px; opacity: 1;">不要相信视频中的广告！</div>
-   <script>
-    var textElement = document.getElementById('blinkingText');
-    var colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'cyan', 'lime', 'brown'];
-    var count = 0;
-    var maxBlinks = 20;
-    
-    function blink() {
-        if (count < maxBlinks) {
-            textElement.style.opacity = textElement.style.opacity == '1' ? '0' : '1';
-            if (textElement.style.opacity == '1') {
-                textElement.style.color = colors[Math.floor(Math.random() * colors.length)];
-                count++;
-            }
-            setTimeout(blink, 500); // 2 Hz frequency means 500 ms per half toggle
-        }
-    }
-
-    blink(); // Start blinking
-   </script>
 <script>
 playurl = location.href.split('?vurl=')[1];
 var player = TCPlayer('player-container-id', {});
