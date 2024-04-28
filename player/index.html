@@ -11,6 +11,23 @@
 </head>
 <body bgcolor="black" style="margin:0">
 <video id="player-container-id" style="width:100%;height:100%" preload="auto" playsinline webkit-playsinline></video>
+   <div id="warningMessage" style="position:absolute; top:10px; width:100%; text-align:center; font-size:20px; font-family:'Arial', sans-serif; color:white;">不要相信视频中的广告</div>
+    <script>
+    var blinkCount = 0;
+    function blinkWarning() {
+        var message = document.getElementById('warningMessage');
+        if (blinkCount < 40) {
+            message.style.visibility = message.style.visibility === 'hidden' ? 'visible' : 'hidden';
+            // 随机生成颜色
+            message.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+            blinkCount++;
+        } else {
+            clearInterval(blinkInterval); // 停止闪烁
+            message.style.visibility = 'visible'; // 确保消息可见
+        }
+    }
+    var blinkInterval = setInterval(blinkWarning, 500); // 每500毫秒切换一次可见性，达到每秒闪烁两次的效果
+    </script>
 <img id="logo" src="https://player.noobie.top/logo_new.png" style="width:56px; height:38px; z-index:999;position:absolute;right:5px;top:5px">
    <div id="realTimeClock" style="position:absolute; left:0px; top:0px; z-index:1000; color:white; background:rgba(0, 0, 0, 0); padding:5px; font-family:'Arial', sans-serif; border-radius:5px; width:80px; height:32px; display:flex; align-items:center; justify-content:center;">
         <!-- 时间将在这里显示 -->
