@@ -14,19 +14,19 @@
    <div id="warningMessage" style="position:absolute; top:10px; width:100%; text-align:center; font-size:20px; font-family:'Arial', sans-serif; color:white;">不要相信视频中的广告</div>
     <script>
      var blinkCount = 0;
-     var messages = ["不要相信视频中的广告", "不赌不输，逢赌必输！"];
+     var messages = ["不要相信视频中的广告！", "不赌不输，逢赌必输！"];
      function blinkWarning() {
        var message = document.getElementById('warningMessage');
        message.innerText = messages[blinkCount % 2]; // 切换显示的文本
        // 随机生成颜色
        message.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
        blinkCount++;
-       if (blinkCount >= 40) {
+       if (blinkCount >= 24) {
         clearInterval(blinkInterval); // 停止闪烁
         message.style.visibility = 'hidden'; // 最后让文本消失
        }
      }
-     var blinkInterval = setInterval(blinkWarning, 500); // 每500毫秒切换文本和颜色，达到每秒闪烁两次的效果
+     var blinkInterval = setInterval(blinkWarning, 750); // 每500毫秒切换文本和颜色，达到每秒闪烁两次的效果
     </script>
 <img id="logo" src="https://player.noobie.top/logo_new.png" style="width:56px; height:38px; z-index:999;position:absolute;right:5px;top:5px">
    <div id="realTimeClock" style="position:absolute; left:0px; top:0px; z-index:1000; color:white; background:rgba(0, 0, 0, 0); padding:5px; font-family:'Arial', sans-serif; border-radius:5px; width:80px; height:32px; display:flex; align-items:center; justify-content:center;">
