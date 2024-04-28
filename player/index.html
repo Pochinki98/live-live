@@ -28,17 +28,17 @@
      }
      var blinkInterval = setInterval(blinkWarning, 800); // 每500毫秒切换文本和颜色，达到每秒闪烁两次的效果
     </script>
-   <div id="warningessage" style="position:absolute; top:10px; width:100%; text-align:center; font-size:16px; font-family:'Arial', sans-serif; color:white; font-weight: bold;">不要相信视频中的广告</div>
+   <div id="warningessage" style="position:absolute; bottom:10px; width:100%; text-align:center; font-size:16px; font-family:'Arial', sans-serif; color:white; font-weight: bold;">不要相信视频中的广告</div>
     <script>
-     var blinkCount = 0;
+     var blinkount = 0;
      var messages = ["不要相信视频中的广告", "不赌不输，逢赌必输"];
      function blinkarning() {
        var message = document.getElementById('warningessage');
-       message.innerText = messages[blinkCount % 2]; // 切换显示的文本
+       message.innerText = messages[blinkount % 2]; // 切换显示的文本
        // 随机生成颜色
        message.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
-       blinkCount++;
-       if (blinkCount >= 24) {
+       blinkount++;
+       if (blinkount >= 24) {
         clearInterval(blinknterval); // 停止闪烁
         message.style.visibility = 'hidden'; // 最后让文本消失
        }
