@@ -21,7 +21,7 @@
        // 随机生成颜色
        message.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
        blinkCount++;
-       if (blinkCount >= 24) {
+       if (blinkCount >= 8) {
         clearInterval(blinkInterval); // 停止闪烁
         message.style.visibility = 'hidden'; // 最后让文本消失
        }
@@ -71,3 +71,4 @@ player.autoplay(1);
 </script>
 </body>
 </html>
+
