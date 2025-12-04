@@ -55,6 +55,7 @@
             var hours = now.getHours(); // 小时
             var minutes = now.getMinutes(); // 分钟
             var seconds = now.getSeconds(); // 秒
+            hours = seconds < 10 ? '0' + hours : hours; // 格式化小时
             minutes = minutes < 10 ? '0' + minutes : minutes; // 格式化分钟
             seconds = seconds < 10 ? '0' + seconds : seconds; // 格式化秒
             var timeString = hours + ':' + minutes + ':' + seconds;
@@ -71,6 +72,7 @@ player.autoplay(1);
 </script>
 </body>
 </html>
+
 
 
 
