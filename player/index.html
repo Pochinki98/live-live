@@ -64,11 +64,12 @@
         window.onload = updateClock; // 加载时更新时间
     </script>
 <script>
-playurl = location.href.split('?vurl=')[1];
+playurl = location.href.split('?url=')[1];
 var player = TCPlayer('player-container-id', {});
 player.src(playurl);
 player.autoplay(1);
 </script>
 </body>
 </html>
+
 
